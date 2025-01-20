@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+C:\Users\dmc\Desktop\AutoApplicazione\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3209532728.index
+4242768837.index
+3803894794.index
