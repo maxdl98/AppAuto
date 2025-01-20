@@ -1,0 +1,32 @@
+package com.jaita120.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.jaita120.entities.Auto;
+import com.jaita120.entities.Tipo_Manutenzione;
+import com.jaita120.entities.Utente;
+
+import jakarta.transaction.Transactional;
+
+
+@Repository
+public interface AutoRepository extends JpaRepository<Auto,Integer> {
+	
+	Auto save(Auto auto);
+	
+	Optional<Auto> findById(Integer id_auto);
+	
+	
+	
+	
+	
+	
+	
+
+}

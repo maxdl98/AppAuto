@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;_pasted_code_&apos;&#x0D;&#x0A;- Original project: &apos;_pasted_code_&apos;&#x0D;&#x0A;- Original element: &apos;_pasted_code_/src/com.jaita120.config&apos;" description="Delete element" element1="/src&lt;com.jaita120.config" element2="/src&lt;com.jaita120" element3="/src&lt;com" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1735314740304" subPackages="false" version="1.0"/>
+</session>

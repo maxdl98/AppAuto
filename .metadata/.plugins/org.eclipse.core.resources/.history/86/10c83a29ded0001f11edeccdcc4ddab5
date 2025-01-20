@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recupero Password</title>
+    <style>
+        /* Stile generale */
+        body {
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .form h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .form input[type="email"],
+        .form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+            position: relative;
+            right: 10px;
+        }
+
+        .form button {
+            width: 105%;
+            padding: 10px;
+            background-color: #bf74f5;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            right: 10px;
+        }
+
+        .form button:hover {
+            background-color: #e07fe0;
+        }
+
+        .form a {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            position: relative;
+            left: 270px;
+            color: #bf74f5;
+        }
+
+        .form a:hover {
+            text-decoration: underline;
+        }
+
+        .oppure {
+            position: relative;
+            left: 52px;
+            top: 20px;
+        }
+
+        .ricordi {
+            position: relative;
+            top: 33px;
+            left: 119px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <h2>Recupero Password</h2>
+        <p>Inserisci il tuo indirizzo email e la nuova password per aggiornare le credenziali.</p>
+        <form id="passwordRecoveryForm">
+            <input id="em" type="email" name="email" placeholder="Inserisci la tua email" required>
+            <input id="pass" type="password" name="password" placeholder="Inserisci una nuova password" required>
+            <button type="submit">Invia</button>
+        </form>
+        <p class="oppure"> __________________oppure __________________ </p>
+        <p class="ricordi"> Ricordi la password? </p>
+        <a class="accedi" href="login.html"> Accedi </a>
+    </div>
+    <script>
+    document.getElementById("passwordRecoveryForm").addEventListener("submit", async (event) => {
+        event.preventDefault(); // Evita il comportamento predefinito del form
+
+        // Ottieni i valori tramite gli ID
+        const emailInput = document.getElementById('em').value = "";
+        const passwordInput = document.getElementById('pass').value = "";
+
+        // Verifica se i campi sono vuoti
+        if (!emailInput || !passwordInput) {
+            alert("Tutti i campi sono obbligatori.");
+            return;
+        }
+
+        try {
+            // URL dell'API
+            const url = 'http://localhost:8080/api/v1/pass';
+
+            // Chiamata API
+            const response = await fetch(url, {
+                method: 'PUT',  // Usa il metodo PUT
+                headers: {
+                    'Content-Type': 'application/json', // Indica che il corpo è in formato JSON
+                    'Accept': 'application/json'  // La risposta sarà in formato JSON
+                },
+                body: JSON.stringify({ email: emailInput, password: passwordInput }) , // Dati inviati nel corpo
+                mode: 'cors'  // Modalità 'cors', NON 'no-cors'
+
+            });
+
+            // Log per il controllo della risposta
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers);
+
+            if (!response.ok) {
+                throw new Error(`Errore HTTP: ${response.status}`);
+            }
+
+            const result = await response.json();
+            console.log('Risultato della risposta:', result);
+
+            alert('Password aggiornata con successo!');
+            window.location.href = 'Login.html';
+
+        } catch (error) {
+            console.error('Errore durante il fetch:', error);
+            alert('Errore: ' + error.message);
+        }
+    });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione</title>
+    <style>
+        /* Stile generale */
+        body {
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Contenitore principale */
+        .container {
+            border-radius: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Titolo */
+        .container h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        /* Input */
+        .container .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        /* Pulsante di invio */
+        .container .btn {
+            width: 105%;
+            padding: 10px;
+            background-color: #da20da;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .container .btn:hover {
+            background-color: #e07fe0;
+        }
+
+        /* Link */
+        .container a {
+            display: block;
+            margin-top: 15px;
+            color: #da20da;
+            text-decoration: none;
+            font-size: 0.9rem;
+            position: relative;
+            top: 17px;
+            left: 7px;
+        }
+
+        .container a:hover {
+            text-decoration: underline;
+        }
+
+        .container .divider {
+            margin: 20px 0;
+            color: white;
+            font-size: 0.9rem;
+            position: relative;
+            top: 15px;
+            left: 10px;
+        }
+
+        /* Errore */
+        .errore {
+            font-size: 14px;
+            color: red;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Registrazione</h2>
+        <p>Compila il modulo per registrarti.</p>
+        <div class="form-wrapper">
+            <label for="nome">Nome</label>
+            <input class="input-field" placeholder="Inserisci nome" required type="text" id="nome" name="nome" autocomplete="off">
+            
+            <label for="cognome">Cognome</label>
+            <input class="input-field" placeholder="Inserisci cognome" required type="text" id="cognome" name="cognome" autocomplete="off">
+            
+            <label for="email">Email</label>
+            <input class="input-field" placeholder="Inserisci email" required type="email" id="email" name="email" autocomplete="off">
+            
+            <label for="nascita">Data di nascita</label>
+            <input class="input-field" placeholder="Inserisci data di nascita" required type="date" id="nascita" name="nascita" autocomplete="off">
+            
+            <label for="usurname">Username</label>
+            <input class="input-field" placeholder="Inserisci username" required type="text" id="usurname" name="usurname" autocomplete="off">
+            
+            <label for="password">Password</label>
+            <input class="input-field" placeholder="Inserisci una password" required type="password" id="password" name="password" autocomplete="new-password">
+            
+            <button id="button" type="submit" class="btn">Registrati</button>
+            <p id="errore" class="errore"></p>
+        </div>
+        <label class="divider">______oppure______</label>
+        <a href="Login.html">Hai già un account? Accedi</a>
+    </div>
+
+    <script>
+        document.getElementById("button").addEventListener("click", function(event) {
+            event.preventDefault(); // Impedisce il comportamento di submit predefinito
+
+            // Recupera i dati dal modulo
+            const nome = document.getElementById("nome").value;
+            const cognome = document.getElementById("cognome").value;
+            const email = document.getElementById("email").value;
+            const nascita = document.getElementById("nascita").value;
+            const usurname = document.getElementById("usurname").value;
+            const password = document.getElementById("password").value;
+
+            // Crea l'oggetto utente da inviare al server
+            const utente = {
+                nome: nome,
+                cognome: cognome,
+                email: email,
+                dataNascita: nascita,
+                usurname: usurname,
+                password: password
+            };
+
+            // Invia i dati al server utilizzando la Fetch API
+            fetch("http://localhost:8080/api/v1/utenti", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(utente)
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Errore durante la registrazione.");
+                }
+            })
+            .then(data => {
+                // Gestisci la risposta dal server
+                if (data && data.id) {
+                    // Successo, reindirizza alla pagina di login
+                    alert("Registrazione avvenuta con successo!");
+                    window.location.href = "Login.html"; // Reindirizza alla pagina di login
+                } else {
+                    // Se non c'è una risposta valida, mostra un messaggio di errore
+                    document.getElementById("errore").textContent = "Errore nella registrazione!";
+                }
+            })
+            .catch(error => {
+                // Gestisci eventuali errori
+                console.error("Errore:", error);
+                document.getElementById("errore").textContent = "Errore nella connessione con il server.";
+            });
+        });
+    </script>
+</body>
+
+</html>

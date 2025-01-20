@@ -1,0 +1,33 @@
+package com.jaita120;
+
+import java.util.Properties;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+
+@Configuration
+public class MailConfig {
+
+    @Bean
+    public JavaMailSender mailSender() {
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+
+        // Configura l'host SMTP di Outlook e la porta
+        mailSender.setHost("smtp.office365.com");  // SMTP di Outlook
+        mailSender.setPort(587);  // Porta 587 per STARTTLS
+
+        // Imposta l'autenticazione
+        mailSender.setUsername("tuo_email@outlook.com");  // La tua email Outlook
+        mailSender.setPassword("Sociologia91!");  // La password normale (non quella per le app)
+
+        // Impostazioni aggiuntive per una connessione sicura
+        Properties props = mailSender.getJavaMailProperties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");  // Usa STARTTLS
+        props.put("mail.smtp.ssl.trust", "smtp.office365.com");  // Indica che il certificato SSL di Outlook è valido
+
+        return mailSender;
+    }
+}

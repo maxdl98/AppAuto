@@ -1,0 +1,53 @@
+package com.jaita120.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+
+public class Manutenzione_Aut {
+
+	
+
+    @ManyToOne
+    @JoinColumn(name = "id_auto")
+    private Auto auto;
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipoman")
+    private Tipo_Manutenzione tipoManutenzione;
+
+	
+
+	public Auto getAuto() {
+		return auto;
+	}
+
+	public void setAuto(Auto auto) {
+		this.auto = auto;
+	}
+
+	public Tipo_Manutenzione getTipoManutenzione() {
+		return tipoManutenzione;
+	}
+
+	public void setTipoManutenzione(Tipo_Manutenzione tipoManutenzione) {
+		this.tipoManutenzione = tipoManutenzione;
+	}
+
+	public Manutenzione_Aut( Auto auto, Tipo_Manutenzione tipoManutenzione) {
+		this.auto = auto;
+		this.tipoManutenzione = tipoManutenzione;
+	}
+    
+    
+    
+    
+    
+    
+    
+}

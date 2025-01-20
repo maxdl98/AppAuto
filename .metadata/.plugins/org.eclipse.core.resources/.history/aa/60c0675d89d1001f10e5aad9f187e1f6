@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenzione Facile</title>
+    <style>
+        /* Stile generale */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            color: #fff;
+        }
+
+        /* Top bar */
+        .topbar {
+            width: 100%;
+            background-color: #da20da;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between; /* Modificato per aggiungere l'email utente */
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .topbar .logout-btn {
+            background-color: #e07fe0;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+                position: relative;
+    right: 20px;
+        }
+
+        .topbar .logout-btn:hover {
+            background-color: #c97bcd;
+        }
+
+        .topbar .user-email {
+            font-size: 1rem;
+            color: white;
+            font-weight: bold;
+                position: relative;
+    left: 360px;
+        }
+
+        .foto {
+            width: 56px;
+            height: 44px;
+            position: relative;
+            left: 0;
+        }
+
+        /* Contenitore principale */
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #da20da;
+        }
+
+        .container p {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Form di inserimento auto */
+        .auto-form {
+            text-align: left;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .auto-form label {
+            font-weight: bold;
+            color: #e07fe0;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .auto-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .auto-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #da20da;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .auto-form button:hover {
+            background-color: #c97bcd;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top bar -->
+    <div class="topbar">
+        <div>
+            <img src="https://cdn.pixabay.com/photo/2013/04/01/08/26/tools-98391_1280.png" alt="chiave" class="foto" />
+        </div>
+        <div class="user-email" id="userEmail">Email Utente</div> <!-- Aggiunto elemento per l'email -->
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+
+    <!-- Contenitore principale -->
+    <div class="container">
+        <h2>Inserisci i Dati della tua Auto</h2>
+
+        <div class="auto-form">
+            <label for="model">Modello dell'auto</label>
+            <input type="text" id="model" placeholder="Inserisci il modello dell'auto">
+
+            <label for="mileage">Quanti chilometri hai fatto dall'ultima manutenzione?</label>
+            <input type="number" id="mileage" placeholder="Inserisci il chilometraggio">
+
+            <label for="maintenanceDate">Data dell'ultima manutenzione</label>
+            <input type="date" id="maintenanceDate">
+
+            <label for="batteryDuration">Quanto tempo fa hai cambiato la batteria? (in anni)</label>
+            <input type="number" id="batteryDuration" placeholder="Inserisci gli anni">
+
+            <button id="saveCarBtn">Salva Auto</button>
+        </div>
+    </div>
+
+    <script>
+        // Mostra l'email salvata nella topbar
+        window.onload = function () {
+            const userEmail = localStorage.getItem("usurname"); // Recupera l'email dal localStorage
+            const emailDisplay = document.getElementById("userEmail");
+
+            if (userEmail) {
+                emailDisplay.textContent = `Benvenuto, ${userEmail}`;
+            } else {
+                emailDisplay.textContent = "Email non trovata.";
+            }
+        };
+
+        // Funzione per salvare i dati dell'auto
+        document.getElementById('saveCarBtn').addEventListener('click', function () {
+            const model = document.getElementById('model').value;
+            const mileage = document.getElementById('mileage').value;
+            const maintenanceDate = document.getElementById('maintenanceDate').value;
+            const batteryDuration = document.getElementById('batteryDuration').value;
+
+            if (!model || !mileage || !maintenanceDate || !batteryDuration) {
+                alert("Per favore, compila tutti i campi.");
+                return;
+            }
+
+            const userId = localStorage.getItem("userId");
+
+            if (!userId) {
+                alert("Devi essere loggato per salvare l'auto.");
+                return;
+            }
+
+            fetch('http://localhost:8080/api/v1/automob', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    km_totali: mileage,
+                    modello: model,
+                    duratabatt: batteryDuration,
+                    data: maintenanceDate,
+                    utente: { id: userId }
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert("Auto salvata con successo!");
+                })
+                .catch(error => {
+                    console.error("Errore non gestito:", error);
+                });
+        });
+
+        // Logout
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            localStorage.removeItem("userId");
+            localStorage.removeItem("usurname");
+            window.location.href = 'Login.html';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+package com.jaita120.service;
+
+
+import java.util.Optional;
+
+
+import org.springframework.stereotype.Service;
+
+import com.jaita120.entities.Auto;
+import com.jaita120.entities.Tipo_Manutenzione;
+import com.jaita120.entities.Utente;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public interface AutoService {
+
+	Auto save(Auto auto) throws Exception;
+	
+	Optional<Auto> findById(Integer id_auto);
+
+	void deleteById(Integer id_auto);
+
+	
+
+
+
+	void manutenzioni(Auto auto) throws Exception;
+	
+
+
+	
+}

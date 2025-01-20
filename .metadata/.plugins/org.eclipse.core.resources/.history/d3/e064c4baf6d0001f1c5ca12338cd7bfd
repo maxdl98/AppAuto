@@ -1,0 +1,29 @@
+package com.jaita120.service;
+
+
+import java.util.Optional;
+
+
+import org.springframework.stereotype.Service;
+
+import com.jaita120.entities.Auto;
+import com.jaita120.entities.Tipo_Manutenzione;
+import com.jaita120.entities.Utente;
+
+@Service
+public interface AutoService {
+
+	Auto save(Auto auto) throws Exception;
+	
+	Optional<Auto> findById(Integer id_auto);
+
+	
+	
+
+
+	void manutenzioni(Integer idAuto, Integer kmTotali, Integer durataBatteria) throws Exception;
+	
+
+
+	
+}

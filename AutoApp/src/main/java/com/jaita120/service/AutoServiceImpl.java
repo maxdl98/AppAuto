@@ -1,0 +1,158 @@
+package com.jaita120.service;
+
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jaita120.entities.Auto;
+import com.jaita120.entities.Tipo_Manutenzione;
+import com.jaita120.entities.Utente;
+import com.jaita120.repository.AutoRepository;
+import com.jaita120.repository.TipoManutenzioneRepository;
+import com.jaita120.repository.UtentiRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class AutoServiceImpl implements AutoService {
+	
+	
+	@Autowired
+	private AutoRepository Arepository;
+	
+	@Autowired
+	private UtentiRepository Urepository;
+	
+	@Autowired
+	private TipoManutenzioneRepository Trepository;
+	
+	
+
+	@Override
+	public Auto save(Auto auto) throws Exception {
+	    // 1. Recupera l'utente associato all'auto dal corpo della richiesta
+	    Utente utente = auto.getUtente();
+	    
+	    if (utente == null || utente.getId() == null) {
+	        throw new IllegalArgumentException("L'utente non è valido o manca l'ID.");
+	    }
+
+	    // 2. Verifica che l'utente esista nel database
+	    Utente utenteOnDb = Urepository.findById(utente.getId());
+
+	    if (utenteOnDb == null) {
+	        throw new IllegalArgumentException("L'utente con ID " + utente.getId() + " non esiste nel database.");
+	    }
+
+	    // 3. Associa l'utente all'auto
+	    auto.setUtente(utenteOnDb);
+
+	    // 4. Salva l'auto nel database
+	    Auto savedAuto = Arepository.save(auto);
+
+	    // 5. Restituisci l'auto salvata
+	    return savedAuto;
+	}
+
+
+
+	@Override
+	public Optional<Auto> findById(Integer id_auto) {
+		return Arepository.findById(id_auto);
+		
+		
+	}
+
+	@Transactional
+	public void manutenzioni(Auto auto) throws Exception {
+	    // Assicurati che il set delle manutenzioni sia inizializzato
+	    if (auto.getManutenzioni() == null) {
+	        auto.setManutenzioni(new HashSet<>());
+	    }
+	    
+
+         LocalDate data = LocalDate.parse("2016-12-31");	
+         
+         if(auto.getData().isBefore(data)) {
+        	 Tipo_Manutenzione tipoManutenzione0 = Trepository.findById(253)
+     	            .orElseThrow(() -> new Exception("Tipo di manutenzione non trovato"));
+        	 auto.getManutenzioni().add(tipoManutenzione0);
+	 
+         }
+
+	    if (auto.getDuratabatt() > 5 && auto.getKm_totali() < 10000) {
+	        Tipo_Manutenzione tipoManutenzione = Trepository.findById(2)
+	            .orElseThrow(() -> new Exception("Tipo di manutenzione non trovato"));
+	        auto.getManutenzioni().add(tipoManutenzione);
+	    }
+
+	    if (auto.getKm_totali() >= 10000 && auto.getKm_totali() <= 20000 && auto.getDuratabatt() > 5) {
+	        Tipo_Manutenzione tipoManutenzione = Trepository.findById(52)
+	            .orElseThrow(() -> new Exception("Tipo di manutenzione non trovato"));
+	        auto.getManutenzioni().add(tipoManutenzione);
+	    }
+
+	    if (auto.getKm_totali() >= 10000 && auto.getKm_totali() <= 20000 && auto.getDuratabatt() < 5) {
+	        Tipo_Manutenzione tipoManutenzione = Trepository.findById(1)
+	            .orElseThrow(() -> new Exception("Tipo di manutenzione non trovato"));
+	        auto.getManutenzioni().add(tipoManutenzione);
+	    }
+
+	    if (auto.getKm_totali() >= 100000) {
+	        Tipo_Manutenzione tipoManutenzione = Trepository.findById(152)
+	            .orElseThrow(() -> new Exception("Tipo di manutenzione non trovato"));
+	        auto.getManutenzioni().add(tipoManutenzione);
+	    }
+
+	    Arepository.save(auto);
+	}
+
+
+
+	@Override
+	public void deleteById(Integer id_auto) {
+		Arepository.deleteById(id_auto);
+	}
+
+
+
+	@Override
+	public void deleteAll() {
+		Arepository.deleteAll();
+		
+	}
+
+
+
+	
+
+	
+	
+
+
+
+
+
+	
+		
+		
+		
+	}
+
+
+
+
+		
+	
+	
+
+	
+	
+	
+
+	
+

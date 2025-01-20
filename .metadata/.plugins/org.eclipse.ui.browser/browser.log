@@ -1,0 +1,114 @@
+
+gen 06, 2025 13:42:24.58 NEW SESSION
+gen 06, 2025 13:42:24.61 [2612:18816:0106/134224.582:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+gen 06, 2025 13:42:25.27 Created TensorFlow Lite XNNPACK delegate for CPU.
+gen 06, 2025 13:42:42.39 [2612:12424:0106/134242.390:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+gen 06, 2025 13:42:42.39     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+gen 06, 2025 13:42:42.39     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+gen 06, 2025 13:42:42.39     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+gen 06, 2025 13:42:42.39     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+gen 06, 2025 13:42:42.39     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+gen 06, 2025 13:42:42.40     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+gen 06, 2025 13:42:49.02 [2612:18816:0106/134249.027:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+
+gen 12, 2025 12:02:41.21 NEW SESSION
+gen 12, 2025 12:02:41.25 [2396:11692:0112/120241.208:ERROR:checkin_request.cc(242)] Check-in request got net error: -106
+gen 12, 2025 12:02:41.26 [2396:11692:0112/120241.216:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+gen 12, 2025 12:02:43.70 Created TensorFlow Lite XNNPACK delegate for CPU.
+gen 12, 2025 12:03:03.44 [2396:11692:0112/120303.442:ERROR:checkin_request.cc(242)] Check-in request got net error: -106
+gen 12, 2025 12:03:04.91 [2396:11692:0112/120304.913:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+gen 12, 2025 12:03:53.40 [2396:11692:0112/120353.401:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:03:53.41 [2396:11692:0112/120353.409:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:03:55.23 [2396:11692:0112/120355.236:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+gen 12, 2025 12:04:03.23 [2396:11692:0112/120403.233:ERROR:checkin_request.cc(242)] Check-in request got net error: -109
+gen 12, 2025 12:04:09.61 [2396:11692:0112/120409.611:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:04:16.67 [2396:11692:0112/120416.678:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:04:20.66 [2396:6656:0112/120420.665:ERROR:device_event_log_impl.cc(201)] [12:04:20.665] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: Impossibile trovare elemento. (0x490)
+gen 12, 2025 12:04:48.63 [2396:11692:0112/120448.637:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:04:52.58 [2396:11692:0112/120452.583:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:04:59.77 [2396:11692:0112/120459.771:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:05:07.87 [2396:11692:0112/120507.877:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:05:10.28 [2396:11692:0112/120510.288:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:05:14.29 [2396:11692:0112/120514.293:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:05:29.59 [2396:11692:0112/120529.589:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:05:33.27 [2396:11692:0112/120533.271:ERROR:checkin_request.cc(242)] Check-in request got net error: -109
+gen 12, 2025 12:05:50.40 [2396:11692:0112/120550.400:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:05:50.41 [2396:11692:0112/120550.412:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+gen 12, 2025 12:05:54.95 [2396:11692:0112/120554.959:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:06:02.30 [2396:11692:0112/120602.308:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:06:09.46 [2396:11692:0112/120609.459:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:06:28.65 [2396:11692:0112/120628.656:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:06:35.72 [2396:11692:0112/120635.720:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:06:43.85 [2396:11692:0112/120643.853:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:06:50.54 [2396:11692:0112/120650.546:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:07:02.37 [2396:11692:0112/120702.374:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:07:10.42 [2396:11692:0112/120710.420:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:07:17.02 [2396:11692:0112/120717.027:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:08:32.32 [14736:6920:0112/120832.327:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:08:32.36 [14736:6920:0112/120832.366:ERROR:checkin_request.cc(242)] Check-in request got net error: -109
+gen 12, 2025 12:08:32.38 [14736:6920:0112/120832.381:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+gen 12, 2025 12:08:33.30 Created TensorFlow Lite XNNPACK delegate for CPU.
+gen 12, 2025 12:08:38.79 [14736:6920:0112/120838.795:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:08:45.94 [14736:6920:0112/120845.948:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:08:49.96 [14736:14640:0112/120849.965:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+gen 12, 2025 12:08:49.96     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+gen 12, 2025 12:08:49.96     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+gen 12, 2025 12:08:49.96     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+gen 12, 2025 12:08:49.96     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+gen 12, 2025 12:08:49.96     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+gen 12, 2025 12:08:49.96     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+gen 12, 2025 12:08:53.51 [14736:6920:0112/120853.510:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:08:54.21 [14736:6920:0112/120854.213:ERROR:checkin_request.cc(242)] Check-in request got net error: -109
+gen 12, 2025 12:09:00.77 [14736:6920:0112/120900.775:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:09:02.27 [14736:6920:0112/120902.272:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+gen 12, 2025 12:09:08.84 [14736:6920:0112/120908.840:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:09:15.50 [14736:6920:0112/120915.506:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:09:22.45 [14736:6920:0112/120922.456:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:09:31.27 [14736:6920:0112/120931.274:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:09:43.65 [14736:6920:0112/120943.650:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:09:43.67 [14736:6920:0112/120943.676:ERROR:checkin_request.cc(242)] Check-in request got net error: -109
+gen 12, 2025 12:09:43.68 [14736:6920:0112/120943.682:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+gen 12, 2025 12:09:57.80 [14736:6920:0112/120957.801:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:10:03.15 [14736:6920:0112/121003.159:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:10:10.35 [14736:6920:0112/121010.352:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:10:17.44 [14736:6920:0112/121017.445:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -109
+gen 12, 2025 12:11:11.61 [14736:6920:0112/121111.615:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+gen 12, 2025 12:11:19.91 [14736:6920:0112/121119.910:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+gen 12, 2025 12:14:05.94 [14736:6920:0112/121405.945:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+gen 12, 2025 12:15:16.40 [18280:19384:0112/121516.405:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+gen 12, 2025 12:15:17.07 Created TensorFlow Lite XNNPACK delegate for CPU.
+gen 12, 2025 12:15:43.04 [18280:19384:0112/121543.048:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+gen 12, 2025 12:15:48.85 [18280:11424:0112/121548.856:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+gen 12, 2025 12:15:48.85     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+gen 12, 2025 12:15:48.85     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+gen 12, 2025 12:15:48.85     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+gen 12, 2025 12:15:48.85     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+gen 12, 2025 12:15:48.85     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+gen 12, 2025 12:15:48.85     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+gen 12, 2025 12:16:25.00 [18280:19384:0112/121624.999:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+gen 12, 2025 12:18:23.91 [18280:19384:0112/121823.908:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+gen 12, 2025 12:28:19.30 [18760:6120:0112/122819.305:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+gen 12, 2025 12:28:20.05 Created TensorFlow Lite XNNPACK delegate for CPU.
+gen 12, 2025 12:28:30.06 [18760:16288:0112/122830.066:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+gen 12, 2025 12:28:30.06     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+gen 12, 2025 12:28:30.06     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+gen 12, 2025 12:28:30.06     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+gen 12, 2025 12:28:30.06     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+gen 12, 2025 12:28:30.06     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+gen 12, 2025 12:28:30.06     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+gen 12, 2025 12:28:48.50 [18760:6120:0112/122848.501:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+gen 12, 2025 12:30:54.29 Created TensorFlow Lite XNNPACK delegate for CPU.
+gen 12, 2025 12:30:54.88 [16408:6236:0112/123054.888:ERROR:registration_request.cc(291)] Registration response error message: DEPRECATED_ENDPOINT
+
+gen 13, 2025 07:31:49.70 NEW SESSION
+gen 13, 2025 07:31:49.73 [12736:2112:0113/073149.708:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+gen 13, 2025 07:31:51.15 Created TensorFlow Lite XNNPACK delegate for CPU.
+gen 13, 2025 07:32:11.12 [12736:2112:0113/073211.121:ERROR:registration_request.cc(274)] Registration URL fetching failed.
+gen 13, 2025 07:32:22.60 [12736:14672:0113/073222.607:ERROR:CONSOLE(1)] "Unknown VE context: language-mismatch    at new He (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:98934)
+gen 13, 2025 07:32:22.60     at devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:194918
+gen 13, 2025 07:32:22.60     at new ci (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195314)
+gen 13, 2025 07:32:22.60     at ci.instance (devtools://devtools/bundled/devtools-frontend/front_end/ui/legacy/legacy.js:1:195436)
+gen 13, 2025 07:32:22.60     at O.presentUI (devtools://devtools/bundled/devtools-frontend/front_end/panels/emulation/emulation.js:1:58454)
+gen 13, 2025 07:32:22.61     at #I (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17402)
+gen 13, 2025 07:32:22.61     at #v (devtools://devtools/bundled/devtools-frontend/front_end/entrypoints/main/main.js:1:17197)", source: devtools://devtools/bundled/devtools-frontend/front_end/ui/visual_logging/visual_logging.js (1)
+gen 13, 2025 07:32:24.13 [12736:14672:0113/073224.132:ERROR:CONSOLE(1)] "Uncaught (in promise) SyntaxError: Unexpected token 'H', "HTTP/1.1 4"... is not valid JSON", source: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@52de4bc8cd46eefa5be2eff17f608b0d30b754ef/&targetType=tab&can_dock=true&panel=elements (1)
